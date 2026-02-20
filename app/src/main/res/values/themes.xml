@@ -1,0 +1,3 @@
+<resources>
+    <style name="Theme.Routiner" parent="Theme.AppCompat.DayNight.NoActionBar" />
+</resources>
