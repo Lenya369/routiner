@@ -18,6 +18,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.routiner.ui.navigation.AppRoute
+import com.routiner.ui.screen.splash.SplashScreen
 import com.routiner.ui.theme.LocalSpacing
 import com.routiner.ui.theme.RoutinerTheme
 
@@ -27,8 +28,18 @@ fun RoutinerApp(
 ) {
     NavHost(
         navController = navController,
-        startDestination = AppRoute.Welcome.route
+        startDestination = AppRoute.Splash.route
     ) {
+        composable(AppRoute.Splash.route) {
+            SplashScreen(onFinished = {
+                navController.navigateToRoot(
+                    route = AppRoute.Welcome,
+                    popUpToRoute = AppRoute.Splash,
+                    inclusive = true
+                )
+            })
+        }
+
         composable(AppRoute.Welcome.route) {
             ScreenTemplate(
                 title = "Welcome",
@@ -73,7 +84,10 @@ private fun ScreenTemplate(
                 .fillMaxSize()
                 .padding(innerPadding)
                 .padding(LocalSpacing.current.screen),
-            verticalArrangement = Arrangement.spacedBy(LocalSpacing.current.large, Alignment.CenterVertically),
+            verticalArrangement = Arrangement.spacedBy(
+                LocalSpacing.current.large,
+                Alignment.CenterVertically
+            ),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Text(text = title, style = MaterialTheme.typography.headlineMedium)
@@ -89,9 +103,13 @@ private fun NavHostController.navigateTo(route: AppRoute) {
     navigate(route.route)
 }
 
-private fun NavHostController.navigateToRoot(route: AppRoute) {
+private fun NavHostController.navigateToRoot(
+    route: AppRoute, popUpToRoute: AppRoute = route,
+    inclusive: Boolean = false
+) {
     navigate(route.route) {
-        popUpTo(graph.findStartDestination().id) {
+        popUpTo(popUpToRoute.route) {
+            this.inclusive = inclusive
             saveState = true
         }
         launchSingleTop = true

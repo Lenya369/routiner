@@ -1,3 +1,10 @@
 <resources>
     <style name="Theme.Routiner" parent="Theme.AppCompat.DayNight.NoActionBar" />
+
+    <style name="Theme.Routiner.Splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/splash_background</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/splash_empty</item>
+        <item name="windowSplashScreenIconBackgroundColor">@android:color/transparent</item>
+        <item name="postSplashScreenTheme">@style/Theme.Routiner</item>
+    </style>
 </resources>

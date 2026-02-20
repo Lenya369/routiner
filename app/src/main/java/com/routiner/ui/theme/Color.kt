@@ -1,5 +1,7 @@
 package com.routiner.ui.theme
 
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 
 val PrimaryLight = Color(0xFF2E7D32)
@@ -15,3 +17,12 @@ val BackgroundDark = Color(0xFF111410)
 val OnBackgroundDark = Color(0xFFE3E3DD)
 val SurfaceDark = Color(0xFF1A1D19)
 val OnSurfaceDark = Color(0xFFE3E3DD)
+
+val mainBlueGradient = Brush.linearGradient(
+    colors = listOf(
+        Color(0xFF6B73FF),
+        Color(0xFF000DFF)
+    ),
+    start = Offset(0f, 0f),
+    end = Offset(700f, 300f)
+)
