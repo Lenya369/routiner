@@ -12,12 +12,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.routiner.ui.navigation.AppRoute
+import com.routiner.ui.screen.login.OnbordingScreen
 import com.routiner.ui.screen.splash.SplashScreen
 import com.routiner.ui.theme.LocalSpacing
 import com.routiner.ui.theme.RoutinerTheme
@@ -33,8 +33,18 @@ fun RoutinerApp(
         composable(AppRoute.Splash.route) {
             SplashScreen(onFinished = {
                 navController.navigateToRoot(
-                    route = AppRoute.Welcome,
+                    route = AppRoute.Onbording,
                     popUpToRoute = AppRoute.Splash,
+                    inclusive = true
+                )
+            })
+        }
+
+        composable(AppRoute.Onbording.route) {
+            OnbordingScreen(onFinished = {
+                navController.navigateToRoot(
+                    route = AppRoute.Home,
+                    popUpToRoute = AppRoute.Onbording,
                     inclusive = true
                 )
             })

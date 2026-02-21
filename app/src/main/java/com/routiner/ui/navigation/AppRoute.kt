@@ -7,6 +7,10 @@ sealed interface AppRoute {
         override val route: String = "splash"
     }
 
+    data object Onbording : AppRoute {
+        override val route: String = "onbording"
+    }
+
     data object Welcome : AppRoute {
         override val route: String = "welcome"
     }

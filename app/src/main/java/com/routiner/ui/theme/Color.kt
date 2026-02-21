@@ -26,3 +26,5 @@ val mainBlueGradient = Brush.linearGradient(
     start = Offset(0f, 0f),
     end = Offset(700f, 300f)
 )
+
+val blue40 = Color(0xFFAFB4FF)
