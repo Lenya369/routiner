@@ -30,7 +30,7 @@ fun SocialButton(
     onClick: () -> Unit,
     modifier: Modifier = Modifier
 ) {
-    OutlinedButton(
+    Button (
         onClick = onClick,
         modifier = modifier,
         colors = ButtonDefaults.buttonColors(
