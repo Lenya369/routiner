@@ -37,10 +37,16 @@ fun OnbordingScreen(onFinished: () -> Unit) {
             .padding(24.dp),
         verticalArrangement = Arrangement.SpaceBetween
     ) {
-        Box { Text("Инфографика") }
         Box(
             modifier = Modifier
                 .fillMaxWidth()
+                .weight(5f),
+            contentAlignment = Alignment.Center
+        ) { Text("Инфографика") }
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .weight(1f)
         ) {
             Column(
                 modifier = Modifier
@@ -57,7 +63,8 @@ fun OnbordingScreen(onFinished: () -> Unit) {
                             containerColor = Color.White,
                             contentColor = Color.Black
                         ),
-                        onClick = onFinished) {
+                        onClick = onFinished
+                    ) {
                         Row(
                             modifier = Modifier
                                 .fillMaxWidth(),

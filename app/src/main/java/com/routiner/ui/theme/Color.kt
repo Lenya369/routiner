@@ -28,3 +28,8 @@ val mainBlueGradient = Brush.linearGradient(
 )
 
 val blue40 = Color(0xFFAFB4FF)
+
+val BottomBarActive = Color(0xFF2F3CFF)
+val BottomBarInactive = Color(0xFFC9CBD3)
+val BottomBarSurface = Color(0xFFFFFFFF)
+val BottomBarBadge = Color(0xFFFF4D4F)

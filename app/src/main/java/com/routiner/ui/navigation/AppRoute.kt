@@ -22,4 +22,20 @@ sealed interface AppRoute {
     data object Home : AppRoute {
         override val route: String = "home"
     }
+
+    data object Progress : AppRoute {
+        override val route: String = "progress"
+    }
+
+    data object Create : AppRoute {
+        override val route: String = "create"
+    }
+
+    data object Notifications : AppRoute {
+        override val route: String = "notifications"
+    }
+
+    data object Profile : AppRoute {
+        override val route: String = "profile"
+    }
 }

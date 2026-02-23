@@ -65,6 +65,5 @@ fun SocialButtonPreview(){
         text = "Apple",
         iconRes = R.drawable.ic_apple,
         onClick = {},
-//        modifier = Modifier.weight(1f)
     )
 }

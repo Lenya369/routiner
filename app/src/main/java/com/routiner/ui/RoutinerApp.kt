@@ -17,6 +17,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.routiner.ui.navigation.AppRoute
+import com.routiner.ui.screen.home.MainShellScreen
 import com.routiner.ui.screen.login.OnbordingScreen
 import com.routiner.ui.screen.splash.SplashScreen
 import com.routiner.ui.theme.LocalSpacing
@@ -69,14 +70,7 @@ fun RoutinerApp(
             )
         }
         composable(AppRoute.Home.route) {
-            ScreenTemplate(
-                title = "Home",
-                body = "Home screen placeholder",
-                actionLabel = "Back to Welcome",
-                onActionClick = {
-                    navController.navigateToRoot(AppRoute.Welcome)
-                }
-            )
+            MainShellScreen()
         }
     }
 }
